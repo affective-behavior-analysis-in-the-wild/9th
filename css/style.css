@@ -1498,8 +1498,8 @@ div.denom {
 
 .team .member .member-img {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -1540,7 +1540,7 @@ div.denom {
 
 .team .member .member-info {
   padding: 30px 20px;
-  width: 200px;
+  width: 250px;
 
 }
 
