@@ -865,46 +865,6 @@ The performance measure (P) is the average F1 Score across all 7 categories: &nb
         </div>
 
 
-<h3>Database</h3> 
- 
-For this Challenge, the BAH (Behavioural Ambivalence/Hesitancy) dataset will be used for the recognition of ambivalence and hesitancy from Q&A videos captured for behaviour analysis. 
-This dataset is designed to detect conflicting affect and intentions around behavioural change intervention. 
-It has been collected by asking subjects across Canada a series of 7 questions that were designed to incite neutral, positive, negative, ambivalent, willing, resistant, or hesitant emotions about their behaviours. 
-Subjects recorded themselves answering each question. 
-In this challenge, experts in behavioural science collected up to 7 videos from 124 subjects. 
-The test set contains videos from 40 randomly selected subjects. The remaining 84 subjects with 431 videos of a total duration of 3.4 hours and around 295.5k frames are provided for training and validation.
-The videos were labeled at frame level to indicate the presence (1) or absence (0) of ambivalence/hesitancy. 
-The design of the questions and annotations are performed by a team of behavioural scientists.
-        
- <br></br>
-
-
-        <h3>Goal of the Challenge and Rules</h3> 
-<p>  Participants in this Challenge will have access to the training videos of the 84 subjects. 
-  In terms of training annotation, we provide frame-based annotation for each video as 0 or 1 for the absence or presence of ambivalence and hesitancy.
-  Participants in this challenge are required to develop their recognition method using their learning setup choice to predict per-frame ambivalence/hesitancy in a video: supervised/self-supervised, domain adaptation, zero-/few-shot learning, etc. 
-  The test set will be released later. We provide a default split of the 84 subjects into training and validation. </p>
-
- 
-<p>
-Teams are allowed to use any publicly available or non-available pre-trained model and any public or non-available database (that contains any type of annotations, e.g. valence/arousal, basic or compound expressions, action units).
-</p>
-        
-
- 
-<h3>Performance Assessment</h3> 
-<p>
-  The performance measure (P) is the weighted F1 score (at frame level) across both classes (presence of ambivalence/hesitancy and absence).
-</p>
-
-
-
-<h3>Baseline Results</h3> 
-<p>We established baseline results using two different feature sets.</p> 
-<p>First, we employed pre-trained Vision Transformer (ViT) features, which were further processed through a three-layer Gated Recurrent Unit (GRU) network. This approach achieved a performance score of: 0.09. </p>
-<p> Secondly, we utilized features extracted from Wav2Vec2, combined with a linear processing layer, which resulted in a performance score of: 0.24. </p>
-<p> Additionally, we explored a multimodal approach by averaging the predictions from both unimodal methods, leading to a combined performance score of: 0.25. </p>
-
 
 
 
@@ -956,18 +916,19 @@ Participants in this challenge are required to develop their recognition method 
 Teams are allowed to use any publicly available or non-available pre-trained model and any public or non-available database (that contains any type of annotations, e.g. valence/arousal, basic or compound expressions, action units).
 </p>
 
-        
+
+ 
 <h3>Performance Assessment</h3> 
 <p>
-The performance measure is the average Pearson's correlation (&rho;) across the 6 emotion dimensions: &nbsp &sum; &rho;/6 </p>
-
+  The performance measure (P) is the weighted F1 score (at frame level) across both classes (presence and absence of ambivalence/hesitancy).
+</p>
 
 
 <h3>Baseline Results</h3> 
-<p>We established baseline results using two different feature sets.</p> 
-<p>First, we employed pre-trained Vision Transformer (ViT) features, which were further processed through a three-layer Gated Recurrent Unit (GRU) network. This approach achieved a performance score of: 0.09. </p>
-<p> Secondly, we utilized features extracted from Wav2Vec2, combined with a linear processing layer, which resulted in a performance score of: 0.24. </p>
-<p> Additionally, we explored a multimodal approach by averaging the predictions from both unimodal methods, leading to a combined performance score of: 0.25. </p>
+<p> The baseline performance on the default validation set is: Weighted F1 = 0.70 
+It is obtained using a multimodal model that includes visual, audio, and transcript following the feature-based approach on this page:
+  https://github.com/sbelharbi/feature-vs-text-compound-emotion.
+</p>
 
 
 
