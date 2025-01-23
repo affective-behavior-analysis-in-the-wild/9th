@@ -854,6 +854,7 @@ The performance measure (P) is the average F1 Score across all 7 categories: &nb
 <!-- ================================================================================================== -->
 
 
+
     <!-- ======= Counts Section ======= -->
     <section id="counts2" class="counts2">
       <div class="container" data-aos="fade-up">
@@ -865,12 +866,32 @@ The performance measure (P) is the average F1 Score across all 7 categories: &nb
         </div>
 
 
+<h3>Database</h3> 
+ 
+For this Challenge, the multimodal Hume-Vidmimic2 dataset is used which consists of more than 15,000 videos totaling over 25 hours. In this dataset, every participant was tasked with imitating a 'seed' video that showcased an individual displaying a particular emotion. Following the mimicry, they were then asked to assess the emotional intensity of the seed video by selecting from a range of predefined emotional categories. The following emotion dimensions are targeted: 'Admiration', 'Amusement', 'Determination', 'Empathic Pain', 'Excitement', and 'Joy'. A normalized score from 0 to 1 is provided as a ground truth value.
+
+ <br></br>
+
+
+
+ 
+<h3>Performance Assessment</h3> 
+<p>
+The performance measure is the average Pearson's correlation (&rho;) across the 6 emotion dimensions: &nbsp &sum; &rho;/6 </p>
+
+
+
+<h3>Baseline Results</h3> 
+<p>We established baseline results using two different feature sets.</p> 
+<p>First, we employed pre-trained Vision Transformer (ViT) features, which were further processed through a three-layer Gated Recurrent Unit (GRU) network. This approach achieved a performance score of: 0.09. </p>
+<p> Secondly, we utilized features extracted from Wav2Vec2, combined with a linear processing layer, which resulted in a performance score of: 0.24. </p>
+<p> Additionally, we explored a multimodal approach by averaging the predictions from both unimodal methods, leading to a combined performance score of: 0.25. </p>
+
 
 
 
       </div>
     </section><!-- End Counts Section -->
-
 
 
     
@@ -925,9 +946,11 @@ Teams are allowed to use any publicly available or non-available pre-trained mod
 
 
 <h3>Baseline Results</h3> 
-<p> The baseline performance on the default validation set is: Weighted F1 = 0.70 
-It is obtained using a multimodal model that includes visual, audio, and transcript following the feature-based approach on this page:
-  https://github.com/sbelharbi/feature-vs-text-compound-emotion.
+<p> The baseline network is a multimodal model that includes visual, audio, and transcript following the feature-based approach <a href="https://github.com/sbelharbi/feature-vs-text-compound-emotion">here</a>.
+  Its performance on the default validation set is:</p>
+<p>
+  The baseline performance on the default validation set is:  P  = 0.70. 
+
 </p>
 
 
