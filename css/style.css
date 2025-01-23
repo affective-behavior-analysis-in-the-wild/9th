@@ -1498,6 +1498,7 @@ div.denom {
 
 .team .member .member-img {
   position: relative;
+  width: 200px;
   overflow: hidden;
 }
 
